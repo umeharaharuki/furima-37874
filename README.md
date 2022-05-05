@@ -32,7 +32,7 @@
 | prefecture_id  | integer      | null: false                    |
 | ship_id        | integer      | null: false                    |
 | price          | integer      | null: false                    |
-| user           | references   | null: false  foreign_key: true |
+| user           | references   | null: false, foreign_key: true |
 
 ### Association
 - has_one :purchase
