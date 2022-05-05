@@ -35,18 +35,18 @@
 | user           | references   | null: false  foreign_key: true |
 
 ### Association
-- has_many :purchases
+- has_one :purchase
 - belongs to :user
 
 ## purchases テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| user         | references | null: false  foreign_key: true |
+| user         | references | null: false, foreign_key: true |
 | item         | references | null: false, foreign_key: true |
 
 ###  Association
-- has_one :shipping_addresses
+- has_one :shipping_address
 - belongs to :user
 - belongs to :item
 
@@ -57,11 +57,11 @@
 | -------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
 | prefecture_id  | integer    | null: false                    |
-| municipality   | integer    | null: false                    |
-| house_number   | integer    | null: false                    |
-| building       | text       |                                |
+| municipality   | string     | null: false                    |
+| house_number   | string     | null: false                    |
+| building       | string     |                                |
 | telephone      | string     | null: false                    |
-| purchases      | references | null: false, foreign_key: true |
+| purchase       | references | null: false, foreign_key: true |
 
 ### Association
 - belongs to :purchase
