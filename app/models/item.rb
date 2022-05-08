@@ -4,6 +4,13 @@ class Item < ApplicationRecord
     validates :explanation
     validates :category_id
     validates :situation_id
-    validates :last_name_kana
-    validates :birthday
+    validates :charge_id
+    validates :prefecture_id
+    validates :ship_id
+    validates :price
+    validates :image
+end
+
+has_one_attached :image
+belongs_to :user
 end
