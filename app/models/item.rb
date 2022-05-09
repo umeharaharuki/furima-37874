@@ -21,7 +21,7 @@ belongs_to :user
     validates :image
 end
 
-  with_options numericality: { other_than: 1 }
+  with_options numericality: { other_than: 1 } do
   validates :category_id
     validates :situation_id
     validates :charge_id
