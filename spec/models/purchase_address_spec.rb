@@ -27,7 +27,7 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'postal_codeが3桁-4桁でないと保存できないこと' do
         @purchase_address.postal_code = '1234567'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
+        expect(@purchase_address.errors.full_messages).to include('Postal code is invalid. Include hyphen(-)')
       end
       it 'prefecture_idが空だと保存できないこと' do
         @purchase_address.prefecture_id = ''
@@ -57,17 +57,17 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'telephoneが10桁以下だと保存できないこと' do
         @purchase_address.telephone = '123456789'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Telephone is invalid")
+        expect(@purchase_address.errors.full_messages).to include('Telephone is invalid')
       end
       it 'telephoneが11桁以上だと保存できないこと' do
         @purchase_address.telephone = '123456789012'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Telephone is invalid")
+        expect(@purchase_address.errors.full_messages).to include('Telephone is invalid')
       end
       it 'telephoneが半角数値以外だと保存できないこと' do
         @purchase_address.telephone = '080-123-456'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Telephone is invalid")
+        expect(@purchase_address.errors.full_messages).to include('Telephone is invalid')
       end
       it 'tokenが空だと保存できないこと' do
         @purchase_address.token = ''
@@ -84,6 +84,6 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Item can't be blank")
       end
-   end
+    end
   end
 end
