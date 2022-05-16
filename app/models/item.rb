@@ -24,7 +24,7 @@ class Item < ApplicationRecord
     validates :image
   end
 
-  with_options numericality: { other_than: 1, message: "が空です" } do
+  with_options numericality: { other_than: 1, message: 'が空です' } do
     validates :category_id
     validates :situation_id
     validates :charge_id
