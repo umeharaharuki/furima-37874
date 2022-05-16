@@ -3,11 +3,11 @@ class PurchaseAddress
   attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :municipality, :house_number, :building, :telephone, :token
 
   with_options presence: true do
-    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
-    validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
+    validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'は例文のように入力してください' }
+    validates :prefecture_id, numericality: { other_than: 1, message: 'が空です' }
     validates :municipality
     validates :house_number
-    validates :telephone, format: { with: /\A\d{10,11}\z/, message: 'is invalid' }
+    validates :telephone, format: { with: /\A\d{10,11}\z/, message: 'が不正です' }
     validates :user_id
     validates :item_id
     validates :token
